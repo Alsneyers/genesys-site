@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script type="text/javascript" charset="utf-8">
+      (function (g, e, n, es, ys) {
+        g['_genesysJs'] = e;
+        g[e] = g[e] || function () {
+          (g[e].q = g[e].q || []).push(arguments)
+        };
+        g[e].t = 1 * new Date();
+        g[e].c = es;
+        ys = document.createElement('script'); ys.async = 1; ys.src = n; ys.charset = 'utf-8'; document.head.appendChild(ys);
+      })(window, 'Genesys', 'https://apps.mypurecloud.ie/genesys-bootstrap/genesys.min.js', {
+        environment: 'prod-euw1',
+        deploymentId: '77e056c9-acef-4e1b-bac6-0bbec2fc06ef'
+      });
+    </script>
+    <script>
+      (function(a,t,c,l,o,u,d){a['_genesysJourneySdk']=o;a[o]=a[o]||function(){
+      (a[o].q=a[o].q||[]).push(arguments)},a[o].l=1*new Date();u=t.createElement(c),
+      d=t.getElementsByTagName(c)[0];u.async=1;u.src=l;u.charset='utf-8';d.parentNode.insertBefore(u,d)
+      })(window, document, 'script', 'https://apps.mypurecloud.ie/journey/sdk/js/web/v1/ac.js', 'ac');
+      ac('init', 'c995e0a5-022e-42f6-b93b-4ee2eadb8c8a', { region: 'euw1' });
+      ac('pageview');
+    </script>
+    <meta charset="UTF-8">
+    <title>Deloitte Insurances</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Deloitte Insurances</h1>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('car_insurance') }}">Car Insurance</a></li>
+                <li><a href="{{ url_for('home_insurance') }}">Home Insurance</a></li>
+                <li><a href="{{ url_for('travel_insurance') }}">Travel Insurance</a></li>
+                <li><a href="{{ url_for('support') }}">Customer Support</a></li>
+                <li><a href="{{ url_for('claim') }}">Register a Claim</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+    <footer>
+        <p>&copy; 2023 Deloitte Insurances</p>
+    </footer>
+</body>
+</html>
