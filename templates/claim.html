@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Register a Claim</h2>
+    <form method="post">
+        <label for="name">Full Name:</label><br>
+        <input type="text" id="name" name="name" required><br>
+
+        <label for="policy_number">Policy Number:</label><br>
+        <input type="text" id="policy_number" name="policy_number" required><br>
+
+        <label for="details">Claim Details:</label><br>
+        <textarea id="details" name="details" rows="5" required></textarea><br>
+
+        <button type="submit">Submit Claim</button>
+    </form>
+{% endblock %}

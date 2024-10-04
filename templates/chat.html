@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Live Chat Support</h2>
+    <div class="chat-container">
+        <div class="chat-box" id="chat-box">
+            {% for message in chat_history %}
+                <div class="chat-message {% if message.sender == 'You' %}user-message{% else %}support-message{% endif %}">
+                    <p><strong>{{ message.sender }}:</strong> {{ message.message }}</p>
+                </div>
+            {% endfor %}
+        </div>
+        <form method="post">
+            <label for="message">Your Message:</label>
+            <textarea name="message" id="message" rows="3" required></textarea>
+            <button type="submit" class="button">Send</button>
+        </form>
+    </div>
+    <script>
+        // Auto-scroll the chat box to the bottom
+        var chatBox = document.getElementById('chat-box');
+        chatBox.scrollTop = chatBox.scrollHeight;
+    </script>
+{% endblock %}
